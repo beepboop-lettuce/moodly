@@ -16,7 +16,7 @@ func main() {
 
 	userName := os.Args[1]
 
-	mood := [6]string{
+	mood := [...]string{
 		"feels good",
 		"feels bad",
 		"feels sad",
@@ -29,4 +29,5 @@ func main() {
 	myMood := mood[rand.Intn(len(mood))]
 
 	fmt.Printf("%s %s\n", userName, myMood)
+
 }
