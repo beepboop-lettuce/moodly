@@ -8,11 +8,13 @@ import (
 )
 
 func main() {
-	username := os.Args[1]
 
 	if len(os.Args) != 2 {
 		fmt.Println("[your name]")
+		return
 	}
+
+	userName := os.Args[1]
 
 	mood := [6]string{
 		"feels good",
@@ -24,4 +26,7 @@ func main() {
 	}
 
 	rand.Seed(time.Now().UnixNano())
+	myMood := mood[rand.Intn(len(mood))]
+
+	fmt.Printf("%s %s\n", userName, myMood)
 }
